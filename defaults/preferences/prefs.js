@@ -46,3 +46,4 @@ pref("browser.cache.disk.smart_size.enabled", true);
 pref("browser.cache.disk.capacity", 1000000);
 pref("nglayout.debug.disable_xul_cache", false);
 pref("nglayout.debug.disable_xul_fastload", false);
+pref("plugin.load_flash_only", false);
