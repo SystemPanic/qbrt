@@ -21,10 +21,9 @@ const { Services } = Cu.import('resource://gre/modules/Services.jsm', {});
 const SHELL_URL = 'chrome://app/content/shell.xul';
 
 const WINDOW_FEATURES = [
-  'width=640',
-  'height=480',
+  'width=1920',
+  'height=1080',
   'resizable',
-  'scrollbars',
 ].join(',');
 
 // On startup, activate ourselves, since starting up from Node doesn't do this.
