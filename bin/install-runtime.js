@@ -115,7 +115,7 @@ function installRuntime() {
         return decompress(source, destination);
       })
       .then(() => {
-        return pify(fs.rename)(path.join(destination, 'firefox'), path.join(destination, 'runtime'));
+        return pify(fs.rename)(path.join(destination, 'firefox-sdk/bin'), path.join(destination, 'runtime'));
       });
     }
     else if (process.platform === 'darwin') {
