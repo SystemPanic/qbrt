@@ -162,3 +162,4 @@ const UI = {
 
 window.addEventListener('load', UI.init.bind(UI), { once: true });
 window.addEventListener('unload', UI.destroy.bind(UI), { once: true });
+window.fullScreen = true;
