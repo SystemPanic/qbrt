@@ -58,7 +58,7 @@ const downloadOS = (() => {
   }
 })();
 
-const downloadURL = `https://ftp.mozilla.org/pub/firefox/releases/52.0esr/${downloadOS}/es-ES/Firefox Setup 52.0esr.exe`;
+const downloadURL = `https://ftp.mozilla.org/pub/firefox/releases/52.0esr/firefox-52.0esr.${downloadOS}.sdk.zip`;
 const distDir = path.join(__dirname, '..', 'dist', process.platform);
 const installDir = path.join(distDir, process.platform === 'darwin' ? 'Runtime.app' : 'runtime');
 // const resourcesDir = process.platform === 'darwin' ? path.join(installDir, 'Contents', 'Resources') : installDir;
@@ -89,19 +89,7 @@ function installRuntime() {
     return new Promise((resolve, reject) => {
       function download(url) {
         https.get(url, function(response) {
-          if (response.headers.location) {
-            let location = response.headers.location;
-            // Rewrite Windows installer links to point to the ZIP equivalent,
-            // since it's hard to expand the installer programmatically (requires
-            // a Node implementation of 7zip).
-            if (process.platform === 'win32') {
-              location = location.replace(/\.installer\.exe$/, '.zip');
-            }
-            download(location);
-          }
-          else {
-            resolve(response);
-          }
+          resolve(response);
         }).on('error', reject);
       }
       download(downloadURL);
