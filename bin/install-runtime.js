@@ -58,7 +58,7 @@ const downloadOS = (() => {
   }
 })();
 
-const downloadURL = `https://ftp.mozilla.org/pub/firefox/releases/52.0esr/firefox-52.0esr.${downloadOS}.sdk.zip`;
+const downloadURL = `https://ftp.mozilla.org/pub/firefox/releases/51.0b9/firefox-51.0b9.${downloadOS}.sdk.zip`;
 const distDir = path.join(__dirname, '..', 'dist', process.platform);
 const installDir = path.join(distDir, process.platform === 'darwin' ? 'Runtime.app' : 'runtime');
 // const resourcesDir = process.platform === 'darwin' ? path.join(installDir, 'Contents', 'Resources') : installDir;
