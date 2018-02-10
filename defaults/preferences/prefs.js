@@ -29,3 +29,10 @@ pref('javascript.options.showInConsole', true);
 // with a custom component DisabledTelemetryStartup that ignores
 // the app-startup and profile-after-change messages.
 pref('toolkit.telemetry.enabled', false);
+// Blocklist preferences
+pref("extensions.blocklist.enabled", false);
+// Controls what level the blocklist switches from warning about items to forcibly
+// blocking them.
+pref("extensions.blocklist.url", "");
+pref("extensions.blocklist.detailsURL", "");
+pref("extensions.blocklist.itemURL", "");
