@@ -18,7 +18,6 @@ pref('browser.dom.window.dump.enabled', true);
 pref('devtools.chrome.enabled', true);
 pref('devtools.debugger.prompt-connection', false);
 pref('devtools.debugger.remote-enabled', true);
-pref('devtools.selfxss.count', 5);
 pref('devtools.theme', 'dark');
 pref('dom.mozBrowserFramesEnabled', true);
 pref('javascript.options.showInConsole', true);
