@@ -38,7 +38,7 @@ const downloadOS = (() => {
     case 'win32':
       switch (process.arch) {
         case 'ia32':
-          return 'win';
+          return 'win32';
         case 'x64':
           return 'win64';
         default:
@@ -47,18 +47,18 @@ const downloadOS = (() => {
     case 'linux':
       switch (process.arch) {
         case 'ia32':
-          return 'linux';
+          return 'linux-i686';
         case 'x64':
-          return 'linux64';
+          return 'linux-x86_64';
         default:
           throw new Error(`unsupported Linux architecture ${process.arch}`);
       }
     case 'darwin':
-      return 'osx';
+      return 'mac';
   }
 })();
 
-const downloadURL = `https://download.mozilla.org/?product=firefox-nightly-latest-ssl&lang=en-US&os=${downloadOS}`;
+const downloadURL = `https://ftp.mozilla.org/pub/firefox/releases/52.0esr/${downloadOS}/es-ES/Firefox Setup 52.0esr.exe`;
 const distDir = path.join(__dirname, '..', 'dist', process.platform);
 const installDir = path.join(distDir, process.platform === 'darwin' ? 'Runtime.app' : 'runtime');
 // const resourcesDir = process.platform === 'darwin' ? path.join(installDir, 'Contents', 'Resources') : installDir;
